@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_051842) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "matches", force: :cascade do |t|
+  create_table "games", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
