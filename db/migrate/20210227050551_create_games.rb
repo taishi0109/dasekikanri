@@ -3,7 +3,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
     create_table :games do |t|
       t.string :name
       t.integer :user_id
-
+      t.references :user, foreign_key: true, null: false
       t.timestamps
     end
   end
