@@ -1,7 +1,11 @@
 class GamesController < ApplicationController
-  def index; end
+  def create
+    @game = Game.new(
+      name: params[:id]
+    )
+  end
 
-  def create; end
-
-  def show; end
+  def show
+    @games = Game.all
+  end
 end
