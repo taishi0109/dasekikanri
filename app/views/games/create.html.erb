@@ -1,6 +1,28 @@
 <h1>Games#create</h1>
 <p>Find me in app/views/games/create.html.erb</p>
-<input type="number"><form>
+<%= form_for @game do |game| %>
+  <%= form_with url: games_path do |f| %>
+    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
+  <% end %>
+  <%= form_with url: games_path do |f| %>
+    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
+  <% end %>
+  <%= form_with url: games_path do |f| %>
+    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
+  <% end %>
+  <%= form_with url: games_path do |f| %>
+    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
+  <% end %>
+  <%= form_with url: games_path do |f| %>
+    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
+  <% end %>
+  <%= form_with url: games_path do |f| %>
+    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
+    <%= f.submit '送信'%>
+  <% end %>
+<% end %>
+
+<form>
   <input type="number">
   <button type="submit">送信</button>
 </form>

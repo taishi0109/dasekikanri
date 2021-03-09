@@ -1,6 +1,6 @@
 <h1>成績入力</h1>
 
-<%= form_with url: games_create_path do |f| %>
+<%= form_for @game, :url => games_path do |f| %>
   <%= f.select :name, [["練習試合", "練習試合"], ["公式戦", "公式戦"], ["対外試合", "対外試合"]], include_blank: "選択して下さい" %>
   <%= f.submit '送信'%>
 <% end %>
