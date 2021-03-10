@@ -1,0 +1,13 @@
+<h1></h1>
+<%= form_for @game, :url => games_path do |f| %>
+  <ol>
+    <li><%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %></li>
+    <li><%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %></li>
+    <li><%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %></li>
+    <li><%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %></li>
+    <li><%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %></li>
+    <li><%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %></li>
+    <%= f.submit '送信' %>
+  </ol>
+<% end %>
+
