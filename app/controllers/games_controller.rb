@@ -27,7 +27,6 @@ class GamesController < ApplicationController
 
   def show
     @user = User.find(user_id: params[:id])
-    # @newpost = Post.new(topic_id: params[:id])
     @games = @user.games
     @newgame = Game.new(user_id: params[:id])
   end
