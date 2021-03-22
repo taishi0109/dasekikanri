@@ -1,28 +1,7 @@
 <h1>Games#create</h1>
-<p>Find me in app/views/games/create.html.erb</p>
-<%= form_for @game, :url => root_path do |f| %>
-  <%= form_with url: games_path do |f| %>
-    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
-  <% end %>
-  <%= form_with url: games_path do |f| %>
-    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
-  <% end %>
-  <%= form_with url: games_path do |f| %>
-    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
-  <% end %>
-  <%= form_with url: games_path do |f| %>
-    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
-  <% end %>
-  <%= form_with url: games_path do |f| %>
-    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
-  <% end %>
-  <%= form_with url: games_path do |f| %>
-    <%= f.select :name, [["1.HIT"], ["2.ツーベース"], ["3.スリーベース"],["4.HR"],["5.OUT"]], include_blank: "選択して下さい" %>
-  <% end %>
-  <%= f.submit '送信' %>
+<%= form_for @game, :url => games_path do |f| %>
+  <p>日時  <%= f.date_select :game_date,{use_month_numbers: true,include_blank: true} %></p>
+  <p>名前  <%= f.text_field :name %></p>
+  <%= f.submit '登録' %>
 <% end %>
 
-<form>
-  <input type="number">
-  <button type="submit">送信</button>
-</form>
