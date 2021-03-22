@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root 'users#index'
   get 'users/index'
   # get 'games/index'
-  post 'games/new' => 'games#new'
-  # get 'games/show/:id' => 'games#show'
-  resources :games, only: [:index, :create, :show, :new] do
+  resources :games, only: [:index, :create, :new, :show] do
     get '/bats', to: 'bats#create'
   end
 end

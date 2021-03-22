@@ -9,7 +9,13 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(game_params)
+    # @game = Game.new(
+    #   user: current_user,
+    #   name: game_params[:name]
+    # )
+
+    @game = current_user.games.new(game_params)
+
     # @game.save
     #   redirect_to new_game_path
     # else
@@ -19,21 +25,21 @@ class GamesController < ApplicationController
     # redirect_to games_path(@game.bat)
     # @game = Game.new(params[:user_id])
     if @game.save
-      redirect_to games_path
+      redirect_to game_path(@game.id)
     else
       render 'new'
     end
   end
 
   def show
-    @user = User.find(user_id: params[:id])
-    @games = @user.games
-    @newgame = Game.new(user_id: params[:id])
+    # @user = User.find(user_id: params[:id])
+    # @games = @user.games
+    @game = current_user.games.find(params[:id])
   end
 
   private
 
   def game_params
-    params.require(:game).permit(:id, :name, :user)
+    params.require(:game).permit(:id, :name, :game_date)
   end
 end
