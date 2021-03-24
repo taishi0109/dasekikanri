@@ -1,9 +1,9 @@
 <h3><%= @game.game_date %></h3>
 <h3><%= @game.name %></h3>
-<% @game.bats.each_with_index do |game, index|%>
+<% @game.bats.each_with_index do |bat, index|%>
   <div>第<%= index + 1 %>打席</div>
-  <%= link_to 'ok', '#' %>
+  <%= link_to bat.result, edit_game_bat_path(@game, bat) %>
 <% end %>
 
 <div>第<%= @game.bats.count + 1 %>打席</div>
-<%= link_to 'O', new_game_bat_path(@game) %>
+<%= link_to '入力', new_game_bat_path(@game) %>
