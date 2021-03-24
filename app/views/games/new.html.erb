@@ -1,6 +1,7 @@
 <h1>Games#create</h1>
 <%= form_for @game, :url => games_path do |f| %>
   <p>日時  <%= f.date_select :game_date,{use_month_numbers: true,include_blank: true} %></p>
+  <p>試合  <%= f.select :game_name, [["練習試合"], ["公式戦"], ["対外試合"]], include_blank: "選択して下さい" %></p>
   <p>名前  <%= f.text_field :name %></p>
   <%= f.submit '登録' %>
 <% end %>

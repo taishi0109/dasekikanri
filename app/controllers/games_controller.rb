@@ -1,11 +1,10 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.all
-    @game = Game.new
+    @games = current_user.games
   end
 
   def new
-    @game = Game.new
+    @game = current_user.games.new
   end
 
   def create
@@ -40,6 +39,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:id, :name, :game_date)
+    params.require(:game).permit(:id, :name, :game_date, :game_name)
   end
 end
