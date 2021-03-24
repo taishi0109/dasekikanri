@@ -1,6 +1,6 @@
-<h1>成績入力</h1>
+<h1>試合結果一覧</h1>
 <%= link_to '新規作成', new_game_path %>
 <% @games.each do |game| %>
-  <p>試合データ</p>
+  <p>打者成績</p>
   <%= link_to game.name, game_path(game.id) %>
 <% end %>
