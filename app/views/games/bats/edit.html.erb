@@ -1,0 +1,5 @@
+<h1>編集</h1>
+<%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+  <%= f.hidden_field :result, :value => 1 %>
+  <button class="btn btn-primary">安打</button>
+<% end %>

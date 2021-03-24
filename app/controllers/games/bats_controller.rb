@@ -1,9 +1,5 @@
 module Games
   class BatsController < ApplicationController
-    # def index
-    #   @bats = Bat.all(params[:id])
-    # end
-
     def new
       @game = current_user.games.find(params[:game_id])
       @bat = @game.bats.new
@@ -18,15 +14,21 @@ module Games
       else
         render 'new'
       end
+    end
 
-      # @bat = Bat.new(
-      #   result: bat_params[:result]
-      # )
-      # if @bat.save
-      #   redirect_to game_path(@game.id)
-      # else
-      #   render 'new'
-      # end
+    def edit
+      @game = current_user.games.find(params[:game_id])
+      @bat = @game.bats.find(params[:id])
+    end
+
+    def update
+      @game = current_user.games.find(params[:game_id])
+      @bat = @game.bats.find(params[:id])
+      if @bat.update(bat_params)
+        redirect_to game_path(@game)
+      else
+        render 'edit'
+      end
     end
 
     private
