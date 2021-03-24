@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_091721) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "game_date"
+    t.string "game_name"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
