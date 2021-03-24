@@ -10,3 +10,16 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - db/schema.rb
+
+LineLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: true
+  Max: 30
+
+Style/NumericPredicate:
+  Enabled: false
