@@ -3,8 +3,16 @@
 <h3><%= @game.name %></h3>
 <% @game.bats.each_with_index do |bat, index|%>
   <div>第<%= index + 1 %>打席</div>
-  <%= link_to bat.result, edit_game_bat_path(@game, bat) %>
+  <%= link_to bat.result.text, edit_game_bat_path(@game, bat) %>
 <% end %>
 
 <div>第<%= @game.bats.count + 1 %>打席</div>
 <%= link_to '入力', new_game_bat_path(@game) %>
+<%= link_to '一覧に戻る', games_path(@game) %>
+<%= @game.bats.count(:result) %>打席
+<%= @game.bats.sum(:result) %>打数
+<%= @game.bats.group(:result).count %>
+<%# <%= Bat.count(1) %>
+<%# <%= Bat.count(3) %>
+<%# <%= Bat.sum(:result) %>
+
