@@ -1,15 +1,17 @@
-<h3><%= @game.game_date %></h3>
-<h3><%= @game.game_name %></h3>
-<h3><%= @game.name %></h3>
-<% @game.bats.each_with_index do |bat, index|%>
-  <div>第<%= index + 1 %>打席</div>
-  <%= link_to bat.result.text, edit_game_bat_path(@game, bat) %>
-<% end %>
+<div class="p-3 mb-2 bg-dark text-white">
+  <h3><%= @game.game_date %></h3>
+  <h3><%= @game.game_name %></h3>
+  <h3><%= @game.name %></h3>
+  <% @game.bats.each_with_index do |bat, index|%>
+    <div>第<%= index + 1 %>打席</div>
+    <%= link_to bat.result.text, edit_game_bat_path(@game, bat) %>
+  <% end %>
 
-<div>第<%= @game.bats.count + 1 %>打席</div>
-<%= link_to '入力', new_game_bat_path(@game) %>
-<p><%= @game.bats.count(:result) %>打席
-<%= @game.dasuu %>打数
-<%= @game.anda %>安打
-打率<%= @game.daritsu %></p>
-<%= link_to '一覧に戻る', games_path(@game) %>
+  <div>第<%= @game.bats.count + 1 %>打席</div>
+  <%= link_to '入力', new_game_bat_path(@game) %>
+  <p><%= @game.bats.count(:result) %>打席
+  <%= @game.dasuu %>打数
+  <%= @game.anda %>安打
+  打率<%= @game.daritsu %></p>
+  <%= link_to '一覧に戻る', games_path(@game) %>
+</div>
