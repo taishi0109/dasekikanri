@@ -8,9 +8,8 @@
 
 <div>第<%= @game.bats.count + 1 %>打席</div>
 <%= link_to '入力', new_game_bat_path(@game) %>
-<%= link_to '一覧に戻る', games_path(@game) %>
-<%= @game.bats.count(:result) %>打席
+<p><%= @game.bats.count(:result) %>打席
 <%= @game.dasuu %>打数
 <%= @game.anda %>安打
-打率<%= @game.daritsu %>
-<%= @game.bats.sum(:result) %>
+打率<%= @game.daritsu %></p>
+<%= link_to '一覧に戻る', games_path(@game) %>

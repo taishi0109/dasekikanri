@@ -1,6 +1,14 @@
 <h1>試合結果一覧</h1>
 <%= link_to '新規作成', new_game_path %>
+  <h3>打者成績</h3>
 <% @games.each do |game| %>
-  <p>打者成績</p>
-  <%= link_to game.name, game_path(game.id) %>
+  <%# <%= link_to game_path(game.id) %>
+  <p><%= link_to game.game_date, game_path(game.id) %>
+  <%= game.game_name %>
+  <%= game.name %></p>
 <% end %>
+<p>試合数:<%= Game.count %>試合</p>
+<p>Total打席:<%= Bat.count(:result) %>打席</p>
+<%# <p>Total結果:<%= Bat.group(:result).count %></p>
+<%# <p>:<%= Bat.where(result: 'dasuu') %></p>
+<%# <p>試合数:<%= Bat.where(result: 'anda') %></p>
