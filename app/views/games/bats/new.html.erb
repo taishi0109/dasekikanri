@@ -1,41 +1,43 @@
-打席登録
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 1 %>
-    <button class="btn btn-primary">安打</button>
-<% end %>
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 2 %>
-    <button class="btn btn-primary">二塁打</button>
-<% end %>
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 3 %>
-    <button class="btn btn-primary">三塁打</button>
-<% end %>
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 4 %>
-    <button class="btn btn-primary">本塁打</button>
-<% end %>
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 5 %>
-    <button class="btn btn-primary">犠打・犠飛</button>
-<% end %>
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 6 %>
-    <button class="btn btn-primary">四死球</button>
-<% end %>
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 7 %>
-    <button class="btn btn-primary">アウト</button>
-<% end %>
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 8 %>
-    <button class="btn btn-primary">三振</button>
-<% end %>
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 9 %>
-    <button class="btn btn-primary">併殺打</button>
-<% end %>
-<%= form_for @bat, :url => game_bats_path do |f| %>
-    <%= f.hidden_field :result, :value => 10 %>
-    <button class="btn btn-primary">敵失</button>
-<% end %>
+<div class="p-3 mb-2 bg-dark text-white">
+    打席登録
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 1 %>
+        <button class="btn btn-primary">安打</button>
+    <% end %>
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 2 %>
+        <button class="btn btn-primary">二塁打</button>
+    <% end %>
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 3 %>
+        <button class="btn btn-primary">三塁打</button>
+    <% end %>
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 4 %>
+        <button class="btn btn-primary">本塁打</button>
+    <% end %>
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 5 %>
+        <button class="btn btn-primary">犠打・犠飛</button>
+    <% end %>
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 6 %>
+        <button class="btn btn-primary">四死球</button>
+    <% end %>
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 7 %>
+        <button class="btn btn-primary">アウト</button>
+    <% end %>
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 8 %>
+        <button class="btn btn-primary">三振</button>
+    <% end %>
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 9 %>
+        <button class="btn btn-primary">併殺打</button>
+    <% end %>
+    <%= form_for @bat, :url => game_bats_path do |f| %>
+        <%= f.hidden_field :result, :value => 10 %>
+        <button class="btn btn-primary">敵失</button>
+    <% end %>
+</div>
