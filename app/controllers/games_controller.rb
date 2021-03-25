@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    @games = current_user.games
+    @games = current_user.games.order(game_date: :DESC)
   end
 
   def new
