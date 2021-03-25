@@ -25,7 +25,7 @@
 <% end %>
 <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
   <%= f.hidden_field :result, :value => 7 %>
-  <button class="btn btn-primary">アウト</button>
+  <button class="btn btn-outline-danger">アウト</button>
 <% end %>
 <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
   <%= f.hidden_field :result, :value => 8 %>
