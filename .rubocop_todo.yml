@@ -79,17 +79,17 @@ Layout/TrailingWhitespace:
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 # IgnoredMethods: refine
 Metrics/BlockLength:
-  Max: 34
+  Max: 36
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
 Metrics/CyclomaticComplexity:
-  Max: 13
+  Max: 14
 
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 Metrics/MethodLength:
-  Max: 43
+  Max: 45
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
