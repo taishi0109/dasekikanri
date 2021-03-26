@@ -1,20 +1,21 @@
 <div class="p-3 mb-2 bg-dark text-white">
   <table class="table table-hover">
     <thead>
-      <tr>
-        <th scope="col" class="text-white">試合日</th>
-        <th scope="col" class="text-white">試合属性</th>
-        <th scope="col" class="text-white">対戦相手</th>
-        <%# <th scope="col">Handle</th> %>
+      <tr class="table-danger">
+        <th class="sticky-top" scope="col">試合日</th>
+        <th class="sticky-top" scope="col">試合属性</th>
+        <th class="sticky-top" scope="col">対戦相手</th>
       </tr>
-  </thead>
+    </thead>
     <h1>試合一覧</h1>
     <%= link_to '新規作成', new_game_path %>
     <tbody>
       <% @games.each do |game| %>
-        <tr>
+      <tr onclick='window.location="<%= '/games/' + game.id.to_s %>"' role="link">
           <th style="width:50%">
-            <%= link_to game.game_date, game_path(game.id) %>
+            <p class="text-white">
+              <%= game.game_date %>
+            </p>
           </th>
           <th>
             <p class="text-white">
