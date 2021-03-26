@@ -32,10 +32,11 @@
         <% end %>
       </tbody>
       <p>試合数:<%= Game.count %>試合</p>
-      <p>Total打席:<%= Bat.count(:result) %>打席</p>
-      <%# <p>Total結果:<%= Bat.group(:result).count %></p>
-      <%# <p>:<%= Bat.where(result: 'dasuu') %></p>
-      <%# <p>試合数:<%= Bat.where(result: 'anda') %></p>
+      <p>Total打席：<%= Bat.count(:result) %>打席</p>
+      <p>Total打数：<%= @user.dasuu %>打数</p>
+      <p>Total安打：<%= @user.anda %>本</p>
+      <p>Total打率：<%= @user.daritsu %></p>
+      <p>Total結果:<%= Bat.group(:result).count %></p>
     </table>
   </div>
 </div>
