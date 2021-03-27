@@ -1,13 +1,13 @@
 <div class="container-fluid">
-  <div class="p-3 mb-2 bg-dark text-white">
-    <%= form_for @game, :url => games_path do |f| %>
-      <p>日時  <%= f.date_select :game_date,{use_month_numbers: true,include_blank: true} %></p>
-      <p>試合  <%= f.select :game_name, [["練習試合"], ["公式戦"], ["対外試合"], ["その他"]], include_blank: "選択して下さい" %></p>
-      <p>対戦相手  <%= f.text_field :name %></p>
-      <%= f.submit '登録' %>
-    <div class="mx-auto" style="width: 120px;">
-      <%= link_to '戻る', games_path %>
+      <div class="p-3 mb-2 bg-dark text-white">
+        <%= form_for @game, :url => games_path do |f| %>
+          <p>日時  <%= f.date_select :game_date,{use_month_numbers: true,include_blank: true} %></p>
+          <p>試合  <%= f.select :game_name, [["練習試合"], ["公式戦"], ["対外試合"], ["その他"]], include_blank: "選択して下さい" %></p>
+          <p>対戦相手  <%= f.text_field :name %></p>
+          <%= f.submit '登録' %>
+          <div class="mx-auto" style="width: 120px;">
+            <%= link_to '戻る', games_path %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <% end %>
-  </div>
-</div>
