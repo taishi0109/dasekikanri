@@ -6,6 +6,65 @@ class User < ApplicationRecord
 
   has_many :games
 
+  def daseki
+    hit = 0
+    dasekisu = 0
+    dasuu = 0
+    games.each do |game|
+      game.bats.each do |bat|
+        case bat.result
+        when '安打'
+          hit += 1
+          dasekisu += 1
+          dasuu += 1
+        when '二塁打'
+          hit += 1
+          dasekisu += 1
+          dasuu += 1
+        when '三塁打'
+          hit += 1
+          dasekisu += 1
+          dasuu += 1
+        when '本塁打'
+          hit += 1
+          dasekisu += 1
+          dasuu += 1
+        when '犠打・犠飛'
+          hit += 0
+          dasekisu += 0
+          dasuu += 1
+        when '四死球'
+          hit += 0
+          dasekisu += 0
+          dasuu += 1
+        when 'アウト'
+          hit += 0
+          dasekisu += 1
+          dasuu += 1
+        when '三振'
+          hit += 0
+          dasekisu += 1
+          dasuu += 1
+        when '併殺打'
+          hit += 0
+          dasekisu += 1
+          dasuu += 1
+        when '敵失'
+          hit += 0
+          dasekisu += 1
+          dasuu += 1
+        else
+          dasekisu += 1
+        end
+        if dasekisu == 0
+          0
+        else
+          dasuu
+        end
+      end
+    end
+  end
+
   def daritsu
     hit = 0
     dasekisu = 0
@@ -51,7 +110,7 @@ class User < ApplicationRecord
     if dasekisu == 0
       0
     else
-      hit.to_f / dasekisu
+      format('%.3f', hit.to_f / dasekisu)
     end
   end
 

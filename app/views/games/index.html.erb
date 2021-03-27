@@ -9,6 +9,7 @@
         </tr>
       </thead>
       <h1>試合一覧</h1>
+      <i class="fas fa-baseball-ball"></i>
       <%= link_to '新規作成', new_game_path %>
       <tbody>
         <% @games.each do |game| %>
@@ -31,12 +32,42 @@
           </tr>
         <% end %>
       </tbody>
-      <p>試合数:<%= Game.count %>試合</p>
-      <p>Total打席：<%= Bat.count(:result) %>打席</p>
-      <p>Total打数：<%= @user.dasuu %>打数</p>
-      <p>Total安打：<%= @user.anda %>本</p>
-      <p>Total打率：<%= @user.daritsu %></p>
-      <p>Total結果:<%= Bat.group(:result).count %></p>
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+          <div class="border-bottom border-primary" style="padding-top:15px;">
+            <p>試合数:<%= Game.count %>試合</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+          <div class="border-bottom border-success" style="padding-top:15px;">
+            <p>Total打席：<%= @user.dasuu %>打席</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+          <div class="border-bottom border-warning" style="padding-top:15px;">
+            <p>Total打数：<%= @user.dasuu %>打数</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+          <div class="border-bottom border-danger" style="padding-top:15px;">
+            <p>Total安打：<%= @user.anda %>本</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+          <div class="border-bottom border-info" style="padding-top:15px;">
+            <p>Total打率：<%= @user.daritsu %></p>
+          </div>
+        </div>
+      </div>
+      <%# <p>Total結果:<%= Bat.group(:result).count %></p>
     </table>
   </div>
 </div>

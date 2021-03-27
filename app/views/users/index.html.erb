@@ -3,6 +3,7 @@
     <h1>打席管理アプリ</h1>
     <% if user_signed_in? %>
       <p> ようこそ<%= current_user.name %> さん </p>
+      <i class="fas fa-baseball-ball"></i>
       <%= link_to "成績を登録する", games_path %>
     <% else %>
       <h2>現在ログインしていません</h2>

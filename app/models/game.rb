@@ -46,7 +46,7 @@ class Game < ApplicationRecord
     if dasekisu == 0
       0
     else
-      hit.to_f / dasekisu
+      format('%.3f', hit.to_f / dasekisu)
     end
   end
 
