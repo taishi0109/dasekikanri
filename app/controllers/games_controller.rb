@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  # before_action :authenticate_user!, :except=>[:index]
   def index
     @games = current_user.games.order(game_date: :DESC)
     @user = current_user
