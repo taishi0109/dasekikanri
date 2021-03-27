@@ -35,14 +35,14 @@
       <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
           <div class="border-bottom border-primary" style="padding-top:15px;">
-            <p>試合数:<%= Game.count %>試合</p>
+            <p>試合数:<%= @user.games.count %>試合</p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
           <div class="border-bottom border-success" style="padding-top:15px;">
-            <p>Total打席：<%= @user.dasuu %>打席</p>
+            <p>Total打席：<%= @user.daseki %>打席</p>
           </div>
         </div>
       </div>
