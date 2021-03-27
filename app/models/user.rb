@@ -56,12 +56,12 @@ class User < ApplicationRecord
         else
           dasekisu += 1
         end
-        if dasekisu == 0
-          0
-        else
-          dasuu
-        end
       end
+    end
+    if dasekisu == 0
+      0
+    else
+      dasuu
     end
   end
 
