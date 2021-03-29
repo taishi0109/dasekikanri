@@ -13,4 +13,16 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap"
+ @import "bootstrap";
+
+ .header-color {
+     background-color:#222222;
+ }
+
+ html, body { height: 100%; }
+
+//  * {
+//         margin: 0px;
+//         padding: 0px;
+//     }
+    

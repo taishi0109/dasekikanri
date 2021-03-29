@@ -1,7 +1,6 @@
-<div class="container-fluid">
-  <div class="p-3 mb-2 bg-dark text-white">
+<div class="h-100 bg-dark p-3 mb-2 text-white">
+  <div class="container-fluid">
     <h2>Change your password</h2>
-
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <%= f.hidden_field :reset_password_token %>
