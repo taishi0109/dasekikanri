@@ -1,74 +1,74 @@
-<div class="container-fluid">
-  <div class="p-3 mb-2 bg-dark text-white">
+<div class="h-100 bg-dark p-3 mb-2 text-white">
+  <div class="container-fluid">
     打席登録
     <div class="row my-4 mx-4">
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
         <%= form_for @bat, :url => game_bats_path do |f| %>
           <%= f.hidden_field :result, :value => 1 %>
-          <button class="btn btn-outline-warning">安打</button>
+          <button class="btn btn-warning rounded-pill" style="width:120px">安打</button>
         <% end %>
       </div>
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
         <%= form_for @bat, :url => game_bats_path do |f| %>
           <%= f.hidden_field :result, :value => 2 %>
-          <button class="btn btn-outline-warning">二塁打</button>
+          <button class="btn btn-warning rounded-pill" style="width:120px">二塁打</button>
         <% end %>
       </div>
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
         <%= form_for @bat, :url => game_bats_path do |f| %>
           <%= f.hidden_field :result, :value => 3 %>
-          <button class="btn btn-outline-warning">三塁打</button>
+          <button class="btn btn-warning rounded-pill" style="width:120px">三塁打</button>
         <% end %>
       </div>
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
         <%= form_for @bat, :url => game_bats_path do |f| %>
           <%= f.hidden_field :result, :value => 4 %>
-          <button class="btn btn-outline-warning">本塁打</button>
+          <button class="btn btn-warning rounded-pill" style="width:120px">本塁打</button>
         <% end %>
       </div>
     </div>
     <div class="row my-4 mx-4">
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-          <%= form_for @bat, :url => game_bats_path do |f| %>
-            <%= f.hidden_field :result, :value => 5 %>
-            <button class="btn btn-outline-primary">犠打・犠飛</button>
-          <% end %>
-        </div>
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-          <%= form_for @bat, :url => game_bats_path do |f| %>
-            <%= f.hidden_field :result, :value => 6 %>
-            <button class="btn btn-outline-primary">四死球</button>
-          <% end %>
-        </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        <%= form_for @bat, :url => game_bats_path do |f| %>
+          <%= f.hidden_field :result, :value => 5 %>
+          <button class="btn btn-primary rounded-pill" style="width:120px">犠打・犠飛</button>
+        <% end %>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        <%= form_for @bat, :url => game_bats_path do |f| %>
+          <%= f.hidden_field :result, :value => 6 %>
+          <button class="btn btn-primary rounded-pill" style="width:120px">四死球</button>
+        <% end %>
+      </div>
     </div>
     <div class="row my-4 mx-4">
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
         <%= form_for @bat, :url => game_bats_path do |f| %>
           <%= f.hidden_field :result, :value => 7 %>
-          <button class="btn btn-outline-danger">アウト</button>
+          <button class="btn btn-danger rounded-pill" style="width:120px">アウト</button>
         <% end %>
       </div>
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
         <%= form_for @bat, :url => game_bats_path do |f| %>
           <%= f.hidden_field :result, :value => 8 %>
-          <button class="btn btn-outline-danger">三振</button>
+          <button class="btn btn-danger rounded-pill" style="width:120px">三振</button>
         <% end %>
       </div>
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
         <%= form_for @bat, :url => game_bats_path do |f| %>
           <%= f.hidden_field :result, :value => 9 %>
-          <button class="btn btn-outline-danger">併殺打</button>
+          <button class="btn btn-danger rounded-pill" style="width:120px">併殺打</button>
         <% end %>
       </div>
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
         <%= form_for @bat, :url => game_bats_path do |f| %>
           <%= f.hidden_field :result, :value => 10 %>
-          <button class="btn btn-outline-danger">敵失</button>
+          <button class="btn btn-danger rounded-pill" style="width:120px">敵失</button>
         <% end %>
       </div>
     </div>
     <div class="mx-auto" style="width: 120px;">
-      <%= link_to "BACK", games_path %>
+      <%= link_to "戻る", games_path %>
     </div>
   </div>
 </div>

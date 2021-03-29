@@ -1,20 +1,55 @@
-<div class="container-fluid">
-  <div class="p-3 mb-2 bg-dark text-white">
-    <h3>試合日：<%= @game.game_date %></h3>
-    <h3>試合属性：<%= @game.game_name %></h3>
-    <h3>対戦相手：<%= @game.name %></h3>
-    <% @game.bats.each_with_index do |bat, index|%>
-      <div>第<%= index + 1 %>打席</div>
-      <%= link_to bat.result.text, edit_game_bat_path(@game, bat) %>
-    <% end %>
-    <div>第<%= @game.bats.count + 1 %>打席</div>
-    <%= link_to '入力', new_game_bat_path(@game) %>
-    <div class="border-top border-bottom" style="padding-top:15px;">
-      <p>今日の成績[  <%= @game.bats.count(:result) %>打席  ]
-      [ <%= @game.dasuu %>打数
-      <%= @game.anda %>安打 ]
-      [  打率<%= @game.daritsu %>  ]</p>
-    </div>
+<div class="h-100 bg-dark p-3 mb-2 text-white">
+  <div class="container-fluid">
+    <table class="table table-bordered text-white">
+      <thead>
+        <tr class="table-danger text-dark">
+          <td colspan="2" class="table-active">【<%= @game.game_name %>】&emsp;<%= @game.game_date %>&emsp;vs<%= @game.name %></th>
+        </tr>
+      </thead>
+      <% @game.bats.each_with_index do |bat, index|%>
+        <tbody>
+          <tr>
+            <th><div>第<%= index + 1 %>打席</div></th>
+            <th><%= link_to bat.result.text, edit_game_bat_path(@game, bat) %></th>
+          </tr>
+        </tbody>
+      <% end %>
+      <tbody>
+        <tr>
+          <th>
+            <div>第<%= @game.bats.count + 1 %>打席</div>
+            <%= link_to '入力', new_game_bat_path(@game) %>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <div class="border-top border-bottom border-success" style="padding-top:15px;">
+      <table class="table table-bordered text-white">
+        <thead>
+          <tr class="table-danger text-dark">
+            <td colspan="2" class="table-active">今日の成績</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>打席</th>
+            <th><%= @game.bats.count(:result) %>打席</th>
+          </tr>
+          <tr>
+            <th>打数</th>
+            <th><%= @game.dasuu %>打数</th>
+          </tr>
+          <tr>
+            <th>安打</th>
+            <th><%= @game.anda %>安打</th>
+          </tr>
+          <tr>
+            <th>打率</th>
+            <th>打率.<%= @game.daritsu %></th>
+          </tr>
+        </tbody>
+      </table>
       <%= link_to '一覧に戻る', games_path(@game) %>
+    </div>
   </div>
 </div>
