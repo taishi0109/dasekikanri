@@ -37,30 +37,70 @@
         <% end %>
       </tbody>
       <div class="row">
-        <div class="col-xs=12  col-lg-4 offset-lg-4">
+        <div class="col-xs-12  col-md-6">
           <div class="border-bottom border-primary" style="padding-top:15px;">
-            <p>試合数:<%= @user.games.count %>試合</p>
+            <p>試合数：<%= @user.games.count %></p>
           </div>
         </div>
-        <div class="col-xs=12 col-lg-4 offset-lg-4">
+        <div class="col-xs-12 col-md-6">
           <div class="border-bottom border-success" style="padding-top:15px;">
-            <p>Total打席：<%= @user.daseki %>打席</p>
+            <p>Total打席：<%= @user.daseki %></p>
           </div>
         </div>
-        <div class="col-xs=12 col-lg-4 offset-lg-4">
+        <div class="col-xs-12 col-md-6">
           <div class="border-bottom border-warning" style="padding-top:15px;">
-            <p>Total打数：<%= @user.dasuu %>打数</p>
+            <p>Total打数：<%= @user.dasuu %></p>
           </div>
         </div>
-        <div class="col-xs=12 col-lg-4 offset-lg-4">
+        <div class="col-xs-12 col-md-6">
           <div class="border-bottom border-danger" style="padding-top:15px;">
-            <p>Total安打：<%= @user.anda %>本</p>
+            <p>Total安打：<%= @user.anda %></p>
           </div>
         </div>
-        <div class="col-xs=12 col-lg-4 offset-lg-4">
+        <div class="col-xs-12 col-md-4 offset-md-4">
           <div class="border-bottom border-info" style="padding-top:15px;">
-            <p>Total打率：<%= @user.daritsu %></p>
+            <p>Total打率：<%= rate_format(@user.daritsu.to_s) %></p>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>安打：<%= @user.single %></p>
+        </div>
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>二塁打：<%= @user.double %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>三塁打：<%= @user.third %></p>
+        </div>
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>本塁打：<%= @user.hr %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>犠打・犠飛：<%= @user.gida %></p>
+        </div>
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>四死球：<%= @user.shikyuu %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>アウト：<%= @user.out %></p>
+        </div>
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>三振：<%= @user.sanshin %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>併殺打：<%= @user.heisatsu %></p>
+        </div>
+        <div class="col-6 col-md-6 offset-md-3">
+          <p>敵失：<%= @user.tekishitsu %></p>
         </div>
       </div>
     </table>

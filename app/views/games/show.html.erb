@@ -3,7 +3,7 @@
     <table class="table table-bordered text-white">
       <thead>
         <tr class="table-danger text-dark">
-          <td colspan="2" class="table-active">【<%= @game.game_name %>】&emsp;<%= @game.game_date %>&emsp;vs<%= @game.name %></th>
+          <td colspan="2" class="table-active">【<%= @game.game_name %>】&emsp;<%= @game.game_date %>&emsp;VS&emsp;<%= @game.name %></th>
         </tr>
       </thead>
       <% @game.bats.each_with_index do |bat, index|%>
@@ -33,22 +33,32 @@
         <tbody>
           <tr>
             <th>打席</th>
-            <th><%= @game.bats.count(:result) %>打席</th>
+            <th><%= @game.bats.count(:result) %></th>
           </tr>
           <tr>
             <th>打数</th>
-            <th><%= @game.dasuu %>打数</th>
+            <th><%= @game.dasuu %></th>
           </tr>
           <tr>
             <th>安打</th>
-            <th><%= @game.anda %>安打</th>
+            <th><%= @game.anda %></th>
           </tr>
           <tr>
             <th>打率</th>
-            <th>打率.<%= @game.daritsu %></th>
+            <th><%= rate_format(@game.daritsu.to_s) %></th>
           </tr>
         </tbody>
       </table>
+      <p>安打：<%= @game.single %></p>
+      <p>二塁打：<%= @game.double %></p>
+      <p>三塁打：<%= @game.third %></p>
+      <p>本塁打：<%= @game.hr %></p>
+      <p>犠打・犠飛：<%= @game.gida %></p>
+      <p>四死球：<%= @game.shikyuu %></p>
+      <p>アウト：<%= @game.out %></p>
+      <p>三振：<%= @game.sanshin %></p>
+      <p>併殺打：<%= @game.heisatsu %></p>
+      <p>敵失：<%= @game.tekishitsu %></p>
       <%= link_to '一覧に戻る', games_path(@game) %>
     </div>
   </div>
