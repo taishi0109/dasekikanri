@@ -19,7 +19,7 @@ Metrics/ClassLength:
 
 Metrics/AbcSize:
   Enabled: true
-  Max: 40
+  Max: 50
 
 Style/NumericPredicate:
   Enabled: false
