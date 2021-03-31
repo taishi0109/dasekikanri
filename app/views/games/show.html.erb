@@ -1,9 +1,9 @@
 <div class="h-100 bg-dark p-3 mb-2 text-white">
-  <div class="container-fluid">
+  <div class="container-fluid"  style="padding-bottom:60px;">
     <table class="table table-bordered text-white">
       <thead>
         <tr class="table-danger text-dark">
-          <td colspan="2" class="table-active">【<%= @game.game_name %>】&emsp;<%= @game.game_date %>&emsp;VS&emsp;<%= @game.name %></th>
+          <td colspan="2" class="table-active">【<%= @game.game_name %>】&emsp;<%= @game.game_date %><br>【対戦相手】<%= @game.name %></td>
         </tr>
       </thead>
       <% @game.bats.each_with_index do |bat, index|%>
@@ -49,16 +49,57 @@
           </tr>
         </tbody>
       </table>
-      <p>安打：<%= @game.single %></p>
-      <p>二塁打：<%= @game.double %></p>
-      <p>三塁打：<%= @game.third %></p>
-      <p>本塁打：<%= @game.hr %></p>
-      <p>犠打・犠飛：<%= @game.gida %></p>
-      <p>四死球：<%= @game.shikyuu %></p>
-      <p>アウト：<%= @game.out %></p>
-      <p>三振：<%= @game.sanshin %></p>
-      <p>併殺打：<%= @game.heisatsu %></p>
-      <p>敵失：<%= @game.tekishitsu %></p>
+    </div>
+    <div class="border-bottom border-success table-striped table-dark" style="padding-top:15px;">
+      <table class="table table-bordered text-white">
+        <thead>
+          <tr class="table-danger text-dark">
+            <td colspan="2" class="table-active">結果内訳</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>安打</th>
+            <th><%= @game.single %></th>
+          </tr>
+          <tr>
+            <th>二塁打</th>
+            <th><%= @game.double %></th>
+          </tr>
+          <tr>
+            <th>三塁打</th>
+            <th><%= @game.third %></th>
+          </tr>
+          <tr>
+            <th>本塁打</th>
+            <th><%= @game.hr %></th>
+          </tr>
+          <tr>
+            <th>犠打・犠飛</th>
+            <th><%= @game.gida %></th>
+          </tr>
+          <tr>
+            <th>四死球</th>
+            <th><%= @game.shikyuu %></th>
+          </tr>
+          <tr>
+            <th>アウト</th>
+            <th><%= @game.out %></th>
+          </tr>
+          <tr>
+            <th>三振</th>
+            <th><%= @game.sanshin %></th>
+          </tr>
+          <tr>
+            <th>併殺打</th>
+            <th><%= @game.heisatsu %></th>
+          </tr>
+          <tr>
+            <th>敵失</th>
+            <th><%= @game.tekishitsu %></th>
+          </tr>
+        </tbody>
+      </table>
       <%= link_to '一覧に戻る', games_path(@game) %>
     </div>
   </div>

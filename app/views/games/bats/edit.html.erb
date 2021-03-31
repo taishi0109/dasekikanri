@@ -1,74 +1,76 @@
-<div class="h-100 bg-dark p-3 mb-2 text-white">
-  <div class="container-fluid">
-    <h1>編集</h1>
-    <div class="row my-4 mx-4">
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 1 %>
-          <button class="btn btn-warning rounded-pill" style="width:120px">安打</button>
-        <% end %>
+<div class="jumbotron">
+  <div class="h-100 p-3 mb-2 text-white">
+    <div class="container-fluid">
+      <div class="text-center" style="padding-bottom:30px;"><p>↓↓↓結果を編集する↓↓↓</p></div>
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 1 %>
+            <button class="btn btn-warning rounded-pill" style="width:120px">安打</button>
+          <% end %>
+        </div>
+        <div class="col-6 col-md-3" style="padding-bottom:25px;">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 2 %>
+            <button class="btn btn-warning rounded-pill" style="width:120px">二塁打</button>
+          <% end %>
+        </div>
+        <div class="col-6 col-md-3">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 3 %>
+            <button class="btn btn-warning rounded-pill" style="width:120px">三塁打</button>
+          <% end %>
+        </div>
+        <div class="col-6 col-md-3" style="padding-bottom:25px;">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 4 %>
+            <button class="btn btn-warning rounded-pill" style="width:120px">本塁打</button>
+          <% end %>
+        </div>
       </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 2 %>
-          <button class="btn btn-warning rounded-pill" style="width:120px">二塁打</button>
-        <% end %>
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 5 %>
+            <button class="btn btn-primary rounded-pill" style="width:120px">犠打・犠飛</button>
+          <% end %>
+        </div>
+        <div class="col-6 col-md-3" style="padding-bottom:25px;">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 6 %>
+            <button class="btn btn-primary rounded-pill" style="width:120px">四死球</button>
+          <% end %>
+        </div>
       </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 3 %>
-          <button class="btn btn-warning rounded-pill" style="width:120px">三塁打</button>
-        <% end %>
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 7 %>
+            <button class="btn btn-danger rounded-pill" style="width:120px">アウト</button>
+          <% end %>
+        </div>
+        <div class="col-6 col-md-3" style="padding-bottom:25px;">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 8 %>
+            <button class="btn btn-danger rounded-pill" style="width:120px">三振</button>
+          <% end %>
+        </div>
+        <div class="col-6 col-md-3">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 9 %>
+            <button class="btn btn-danger rounded-pill" style="width:120px">併殺打</button>
+          <% end %>
+        </div>
+        <div class="col-6 col-md-3">
+          <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
+            <%= f.hidden_field :result, :value => 10 %>
+            <button class="btn btn-danger rounded-pill" style="width:120px">敵失</button>
+          <% end %>
+        </div>
       </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 4 %>
-          <button class="btn btn-warning rounded-pill" style="width:120px">本塁打</button>
-        <% end %>
+      <div class="text-center" style="padding-top:20px;">
+        <%= link_to "戻る", game_path(@game) %>
       </div>
-    </div>
-    <div class="row my-4 mx-4">
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 5 %>
-          <button class="btn btn-primary rounded-pill" style="width:120px">犠打・犠飛</button>
-        <% end %>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 6 %>
-          <button class="btn btn-primary rounded-pill" style="width:120px">四死球</button>
-        <% end %>
-      </div>
-    </div>
-    <div class="row my-4 mx-4">
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 7 %>
-          <button class="btn btn-danger rounded-pill" style="width:120px">アウト</button>
-        <% end %>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 8 %>
-          <button class="btn btn-danger rounded-pill" style="width:120px">三振</button>
-        <% end %>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 9 %>
-          <button class="btn btn-danger rounded-pill" style="width:120px">併殺打</button>
-        <% end %>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-        <%= form_for @bat, :url => game_bat_path, method: :patch do |f| %>
-          <%= f.hidden_field :result, :value => 10 %>
-          <button class="btn btn-danger rounded-pill" style="width:120px">敵失</button>
-        <% end %>
-      </div>
-    </div>
-    <div class="mx-auto" style="width: 120px;">
-      <%= link_to "戻る", games_path %>
     </div>
   </div>
 </div>

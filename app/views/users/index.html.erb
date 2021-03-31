@@ -1,14 +1,16 @@
-<div class="h-100 bg-dark p-3 mb-2 text-white">
-  <div class="container-fluid">
-    <h1>打席管理アプリ</h1>
-    <% if user_signed_in? %>
-      <p> ようこそ<%= current_user.name %> さん </p>
-      <i class="fas fa-baseball-ball"></i>
-      <%= link_to "成績を登録する", games_path %>
-    <% else %>
-      <h2>現在ログインしていません</h2>
-      <%= link_to "ログイン",new_user_session_path, class: 'post' %>
-      <%= link_to "新規登録",new_user_registration_path, class: 'post' %>
-    <% end %>
+<div class="jumbotron">
+  <div class="h-100 p-3 mb-2 text-white">
+    <div class="container-fluid text-center">
+      <h1>打席管理</h1>
+      <% if user_signed_in? %>
+        <p> ようこそ<%= current_user.name %> さん </p>
+        <i class="fas fa-baseball-ball"></i>
+        <%= link_to "はじめる", games_path %>
+      <% else %>
+        <h2>現在ログインしていません</h2>
+        <%= link_to "ログイン",new_user_session_path, class: 'post' %>
+        <%= link_to "新規登録",new_user_registration_path, class: 'post' %>
+      <% end %>
+    </div>
   </div>
 </div>
