@@ -1,14 +1,18 @@
 <div class="h-100 bg-dark p-3 mb-2 text-white">
-  <div class="container-fluid">
+  <div class="container-fluid text-center">
     <%= form_for @game, :url => games_path do |f| %>
       <p>日時  <%= f.date_field :game_date %></p>
-      <label><%= f.radio_button :game_name, "練習試合" %>練習試合</label>
-      <label><%= f.radio_button :game_name, "公式戦" %>公式戦</label>
+      <div class="row">
+        <div class="col-12">
+          <label><%= f.radio_button :game_name, "練習試合" %>練習試合</label>
+          <label><%= f.radio_button :game_name, "公式戦" %>公式戦</label>
+        </div>
+      </div>
       <label><%= f.radio_button :game_name, "対外試合" %>対外試合</label>
       <label><%= f.radio_button :game_name, "その他" %>その他</label>
       <p>対戦相手  <%= f.text_field :name %></p>
       <%= f.submit '登録' %>
-      <div class="mx-auto" style="width: 120px;">
+      <div class="mx-auto text-center" style="width: 120px; padding-top:10px;">
         <%= link_to '戻る', games_path %>
       </div>
     <% end %>
